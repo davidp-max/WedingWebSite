@@ -64,7 +64,7 @@ const defaultWeddingData = {
   contactPhone: "+34 600 123 456"
 };
 
-export default App;
+
 
 function App() {
   const [wedding, setWedding] = useState(() => {
@@ -1068,4 +1068,5 @@ function App() {
 
     </div>
   );
+  export default App;
 }
