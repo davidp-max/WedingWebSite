@@ -68,8 +68,21 @@ const defaultWeddingData = {
 
 function App() {
   const [wedding, setWedding] = useState(() => {
-    const saved = localStorage.getItem('wedding_site_data');
-    return saved ? JSON.parse(saved) : defaultWeddingData;
+    try {
+      const saved = localStorage.getItem('wedding_site_data');
+      return saved ? JSON.parse(saved) : defaultWeddingData;
+    } catch (e) {
+      return defaultWeddingData;
+    }
+  });
+
+  const [rsvps, setRsvps] = useState(() => {
+    try {
+      const saved = localStorage.getItem('wedding_rsvps');
+      return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+      return [];
+    }
   });
 
   const [editMode, setEditMode] = useState(false);
